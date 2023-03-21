@@ -19,7 +19,7 @@
         backdrop-filter: blur(4px);
 
         width: 80%;
-        /* height: 200px; */
+        min-height: 200px;
 
         display: flex;
         flex-direction: row;

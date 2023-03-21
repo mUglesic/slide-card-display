@@ -3,6 +3,8 @@
   import Card from './lib/Card.svelte';
   import links from './assets/links.json';
 
+  import everest from '/everest.png';
+
   let selected: number = 0;
   
 </script>
@@ -17,7 +19,7 @@
 
       <Card>
         
-        <img class="cardImg" alt="placeholder" src="/everest.jpg">
+        <img class="cardImg" alt="placeholder" src={everest}>
 
         <div class="cardText">
           <h1 class="text-large title">{link.title}</h1>
