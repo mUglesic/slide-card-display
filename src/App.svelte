@@ -17,7 +17,7 @@
 
     <div class="flex row center" style="width: 33vw;">
 
-      <Card>
+      <Card link={link.link}>
         
         <img class="cardImg" alt="placeholder" src={everest}>
 
