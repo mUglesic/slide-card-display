@@ -1,0 +1,22 @@
+[
+    {
+        "title": "bugi-navbar",
+        "description": "Simple svelte + tailwind navbar."
+    },
+    {
+        "title": "lorem ipsum1",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan condimentum dolor quis vehicula. Etiam sit amet elementum diam, ac vulputate ligula. Cras fermentum nisl augue, id finibus eros egestas non. Vestibulum viverra ultricies tortor. Suspendisse pharetra libero velit, eget egestas risus suscipit a. Nunc aliquet a felis in posuere. Quisque ut maximus lectus, eu molestie leo. Aliquam ut laoreet odio, sit amet pretium nunc. Fusce est neque, laoreet sit amet mollis eu, dictum id felis. Aenean tincidunt turpis non arcu tristique mattis. Sed non gravida metus. Fusce vel justo porta, luctus mauris at, elementum arcu. Nam commodo ullamcorper venenatis. Aenean non lectus aliquam, aliquet sem non, tincidunt neque. Mauris ultricies, turpis non bibendum ultricies, dolor felis congue tellus, ac ullamcorper augue neque nec turpis."
+    },
+    {
+        "title": "lorem ipsum2",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan condimentum dolor quis vehicula. Etiam sit amet elementum diam, ac vulputate ligula. Cras fermentum nisl augue, id finibus eros egestas non. Vestibulum viverra ultricies tortor. Suspendisse pharetra libero velit, eget egestas risus suscipit a. Nunc aliquet a felis in posuere. Quisque ut maximus lectus, eu molestie leo. Aliquam ut laoreet odio, sit amet pretium nunc. Fusce est neque, laoreet sit amet mollis eu, dictum id felis. Aenean tincidunt turpis non arcu tristique mattis. Sed non gravida metus. Fusce vel justo porta, luctus mauris at, elementum arcu. Nam commodo ullamcorper venenatis. Aenean non lectus aliquam, aliquet sem non, tincidunt neque. Mauris ultricies, turpis non bibendum ultricies, dolor felis congue tellus, ac ullamcorper augue neque nec turpis."
+    },
+    {
+        "title": "lorem ipsum3",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan condimentum dolor quis vehicula. Etiam sit amet elementum diam, ac vulputate ligula. Cras fermentum nisl augue, id finibus eros egestas non. Vestibulum viverra ultricies tortor. Suspendisse pharetra libero velit, eget egestas risus suscipit a. Nunc aliquet a felis in posuere. Quisque ut maximus lectus, eu molestie leo. Aliquam ut laoreet odio, sit amet pretium nunc. Fusce est neque, laoreet sit amet mollis eu, dictum id felis. Aenean tincidunt turpis non arcu tristique mattis. Sed non gravida metus. Fusce vel justo porta, luctus mauris at, elementum arcu. Nam commodo ullamcorper venenatis. Aenean non lectus aliquam, aliquet sem non, tincidunt neque. Mauris ultricies, turpis non bibendum ultricies, dolor felis congue tellus, ac ullamcorper augue neque nec turpis."
+    },
+    {
+        "title": "lorem ipsum4",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan condimentum dolor quis vehicula. Etiam sit amet elementum diam, ac vulputate ligula. Cras fermentum nisl augue, id finibus eros egestas non. Vestibulum viverra ultricies tortor. Suspendisse pharetra libero velit, eget egestas risus suscipit a. Nunc aliquet a felis in posuere. Quisque ut maximus lectus, eu molestie leo. Aliquam ut laoreet odio, sit amet pretium nunc. Fusce est neque, laoreet sit amet mollis eu, dictum id felis. Aenean tincidunt turpis non arcu tristique mattis. Sed non gravida metus. Fusce vel justo porta, luctus mauris at, elementum arcu. Nam commodo ullamcorper venenatis. Aenean non lectus aliquam, aliquet sem non, tincidunt neque. Mauris ultricies, turpis non bibendum ultricies, dolor felis congue tellus, ac ullamcorper augue neque nec turpis."
+    }
+]
