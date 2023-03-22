@@ -9,9 +9,9 @@
   
 </script>
 
-<main class="flex col" style="width: 100vw;">
+<main class="flex col" style="width: 100vw; overflow-x: hidden;">
 
-  <div id="cards" class="flex row around" style="width: calc({links.length * 33}vw + {links.length * 10}px); transform: translateX({100 / links.length - (selected * (100 / links.length))}%);">
+  <div id="cards" class="flex row around" style="width: {links.length * 33}vw; transform: translateX({100 / links.length - (selected * (100 / links.length))}%);">
 
     {#each links as link}
 
@@ -48,8 +48,6 @@
     will-change: transform;
 
     transition: transform 330ms;
-
-    /* gap: 30px; */
 
   }
 
