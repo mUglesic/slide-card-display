@@ -6,12 +6,18 @@
   import everest from '/everest.png';
 
   let selected: number = 0;
+
+  let CARDS_ON_SCREEN: number = 3;
+  let MOVE_BY: number = 3;
+
+  $: totalCardSize = links.length * (100 / CARDS_ON_SCREEN);
+  $: currentPosition = -selected * (100 / links.length);
   
 </script>
 
 <main class="flex col" style="width: 100vw; overflow-x: hidden;">
 
-  <div id="cards" class="flex row around" style="width: {links.length * 33}vw; transform: translateX({100 / links.length - (selected * (100 / links.length))}%);">
+  <div id="cards" class="flex row around" style="width: {totalCardSize}vw; transform: translateX({currentPosition}%);">
 
     {#each links as link}
 
@@ -35,8 +41,19 @@
   </div>
 
   <div class="flex row center gap-large" style="margin-top: 50px;">
-    <button on:click={() => selected = Math.max(selected - 1, 0)}>&larr;</button>
-    <button on:click={() => selected = Math.min(selected + 1, links.length - 1)}>&rarr;</button>
+    <button on:click={() => selected = Math.max(selected - MOVE_BY, 0)}>&larr;</button>
+    <button on:click={() => selected = Math.min(selected + MOVE_BY, links.length - CARDS_ON_SCREEN)}>&rarr;</button>
+  </div>
+
+  <div class="flex col center gap-large" style="margin-top: 20px;">
+    <div class="slider">
+      <label for="onScreenCards">Cards shown: {CARDS_ON_SCREEN}</label>
+      <input name="onScreenCards" type="range" min="1" max="5" step="1" bind:value={CARDS_ON_SCREEN}>
+    </div>
+    <div class="slider">
+      <label for="moveBy">Move by: {MOVE_BY}</label>
+      <input type="range" min="1" max="5" step="1" bind:value={MOVE_BY}>
+    </div>
   </div>
 
 </main>
