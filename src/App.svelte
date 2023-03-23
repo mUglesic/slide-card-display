@@ -10,26 +10,27 @@
   let CARDS_ON_SCREEN: number = 3;
   let MOVE_BY: number = 3;
 
-  $: totalCardSize = links.length * (100 / CARDS_ON_SCREEN);
+  $: cardSize = (100 / CARDS_ON_SCREEN);
+  $: totalCardSize = links.length * cardSize;
   $: currentPosition = -selected * (100 / links.length);
   
 </script>
 
 <main class="flex col" style="width: 100vw; overflow-x: hidden;">
 
-  <div id="cards" class="flex row around" style="width: {totalCardSize}vw; transform: translateX({currentPosition}%);">
+  <div id="cards" class="flex row around" style="--totalCardSize: {totalCardSize}vw; --currentPosition: {currentPosition}%;">
 
     {#each links as link}
 
-    <div class="flex row center" style="width: 33vw;">
+    <div class="flex row center" style="width: {cardSize}vw;">
 
       <Card link={link.link}>
         
         <img class="cardImg" alt="placeholder" src={everest}>
 
         <div class="cardText">
-          <h1 class="text-large title">{link.title}</h1>
-          <span class="text-small desc">{link.description}</span>
+          <h1 class="title">{link.title}</h1>
+          <span class="desc">{link.description}</span>
         </div>
 
       </Card>
@@ -61,6 +62,9 @@
 <style>
 
   #cards {
+
+    width: var(--totalCardSize);
+    transform: translateX(var(--currentPosition));
     
     will-change: transform;
 
@@ -90,11 +94,19 @@
   }
 
   .title {
+
+    font-size: 1.8em;
+    line-height: 1.5em;
+
     text-transform: uppercase;
     font-weight: bold;
+
   }
 
   .desc {
+
+    font-size: 1em;
+    line-height: 1.4em;
 
     font-weight: 300;
 
@@ -102,7 +114,7 @@
 
     display: -webkit-box;
 
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 
   }
