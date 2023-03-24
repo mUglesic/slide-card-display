@@ -7,53 +7,63 @@
 
   let selected: number = 0;
 
-  let CARDS_ON_SCREEN: number = 3;
-  let MOVE_BY: number = 3;
+  let CARDS_ON_SCREEN: number = 1;
+  let MOVE_BY: number = 1;
 
   $: cardSize = (100 / CARDS_ON_SCREEN);
   $: totalCardSize = links.length * cardSize;
   $: currentPosition = -selected * (100 / links.length);
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth < 900) {
+      CARDS_ON_SCREEN = 1;
+      MOVE_BY = 1;
+    }
+  });
   
 </script>
 
-<main class="flex col" style="width: 100vw; overflow-x: hidden;">
+<main class="flex col center" style="width: 100vw;">
 
-  <div id="cards" class="flex row around" style="--totalCardSize: {totalCardSize}vw; --currentPosition: {currentPosition}%;">
+  <div class="flex row" style="justify-content: center; width: 100%;">
 
-    {#each links as link}
+    <button class="arrow-side" on:click={() => selected = Math.max(selected - MOVE_BY, 0)}>&larr;</button>
 
-    <div class="flex row center" style="width: {cardSize}vw;">
+    <div style="width: 80%; overflow-x: hidden;">
 
-      <Card link={link.link}>
-        
-        <img class="cardImg" alt="placeholder" src={everest}>
+      <div id="cards" class="flex row around" style="--totalCardSize: {totalCardSize}%; --currentPosition: {currentPosition}%;">
 
-        <div class="cardText">
-          <h1 class="title">{link.title}</h1>
-          <span class="desc">{link.description}</span>
+        {#each links as link}
+
+        <div class="flex row center" style="width: {cardSize}%;">
+
+          <Card type="template" link={link.link} image={everest} title={link.title} description={link.description}/>
+
         </div>
 
-      </Card>
+        {/each}
+
+      </div>
 
     </div>
 
-    {/each}
+    <button class="arrow-side" on:click={() => selected = Math.min(selected + MOVE_BY, links.length - CARDS_ON_SCREEN)}>&rarr;</button>
 
   </div>
 
-  <div class="flex row center gap-large" style="margin-top: 50px;">
+  <div class="flex row center gap-large arrow-bottom" style="margin-top: 50px;">
     <button on:click={() => selected = Math.max(selected - MOVE_BY, 0)}>&larr;</button>
     <button on:click={() => selected = Math.min(selected + MOVE_BY, links.length - CARDS_ON_SCREEN)}>&rarr;</button>
   </div>
 
-  <div class="flex col center gap-large" style="margin-top: 20px;">
+  <div class="flex col center gap-large option-slider" style="margin-top: 20px;">
     <div class="slider">
       <label for="onScreenCards">Cards shown: {CARDS_ON_SCREEN}</label>
       <input name="onScreenCards" type="range" min="1" max="5" step="1" bind:value={CARDS_ON_SCREEN}>
     </div>
     <div class="slider">
       <label for="moveBy">Move by: {MOVE_BY}</label>
-      <input type="range" min="1" max="5" step="1" bind:value={MOVE_BY}>
+      <input name="moveBy" type="range" min="1" max="5" step="1" bind:value={MOVE_BY}>
     </div>
   </div>
 
@@ -72,50 +82,31 @@
 
   }
 
-  .cardImg {
-
-    width: 50%;
-
-    border-radius: 0.625em;
-
+  .arrow-side {
+    display: none;
   }
 
-  .cardText {
-
-    height: 90%;
-    width: 50%;
-
+  .arrow-bottom {
     display: flex;
-    flex-direction: column;
-    gap: 0.125em;
-    
-    text-align: left;
-    
   }
 
-  .title {
-
-    font-size: 1.8em;
-    line-height: 1.5em;
-
-    text-transform: uppercase;
-    font-weight: bold;
-
+  .option-slider {
+    display: none;
   }
 
-  .desc {
+  @media (min-width: 900px) {
 
-    font-size: 1em;
-    line-height: 1.4em;
+    .arrow-side {
+      display: block;
+    }
 
-    font-weight: 300;
+    .arrow-bottom {
+      display: none;
+    }
 
-    overflow: hidden;
-
-    display: -webkit-box;
-
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+    .option-slider {
+      display: flex;
+    }
 
   }
   
